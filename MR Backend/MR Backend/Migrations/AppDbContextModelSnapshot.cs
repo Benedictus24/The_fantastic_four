@@ -33,6 +33,12 @@ namespace MR_Backend.Migrations
                     b.HasKey("AdminId");
 
                     b.ToTable("Admin");
+
+                    b.HasData(
+                        new
+                        {
+                            AdminId = 1
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.General_User", b =>
@@ -127,6 +133,18 @@ namespace MR_Backend.Migrations
                     b.HasKey("RoleId");
 
                     b.ToTable("Role");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            Description = "Admin"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            Description = "User"
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.User", b =>
@@ -156,13 +174,42 @@ namespace MR_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ResetPasswordToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ResetPasswordTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Surname")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Birthday = new DateTime(1985, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@example.com",
+                            Name = "John",
+                            Password = "password123",
+                            PhoneNumber = "123-456-7890",
+                            RefreshTokenExpiryTime = new DateTime(2024, 8, 27, 19, 37, 40, 231, DateTimeKind.Local).AddTicks(568),
+                            ResetPasswordTokenExpiry = new DateTime(2024, 8, 27, 19, 37, 40, 231, DateTimeKind.Local).AddTicks(590),
+                            Surname = "Doe"
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.User_Role", b =>
@@ -186,6 +233,14 @@ namespace MR_Backend.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("User_Role");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RoleId = 1,
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.General_User", b =>
