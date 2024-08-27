@@ -5,3 +5,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --col_blue: #000080;
+    --col_lavender: #0000FF;
+    --col_white: #FFFFFF;
+    --col_regyellow:#FFBB00;
+  }
+  

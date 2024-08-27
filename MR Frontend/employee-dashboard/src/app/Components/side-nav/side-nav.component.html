@@ -1,0 +1,16 @@
+<mat-drawer-container class="h-screen" autosize>
+    <mat-drawer #drawer class="h-full " mode="side" opened>
+      <ng-container *ngIf="showFiller">
+        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+      </ng-container>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="h-full flex items-center justify-center">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  </mat-drawer-container>
