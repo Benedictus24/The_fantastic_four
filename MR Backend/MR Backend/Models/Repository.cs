@@ -66,5 +66,32 @@ namespace MR_Backend.Models
 
 			return userProfile;
 		}
+		//----------------------------------------------- TRACKING HOURS----------------------------------------------------------
+
+
+		public async Task<IEnumerable<Hours_Worked>> GetByUserIdAsync(int userId)
+		{
+			return await _appDbContext.Hours_Worked
+				.Where(h => h.GeneralUserId == userId)
+				.Include(h => h.General_User)
+				.ToListAsync();
+		}
+
+		public async Task UpdateAsync(Hours_Worked hoursWorked)
+		{
+			_appDbContext.Entry(hoursWorked).State = EntityState.Modified;
+			await _appDbContext.SaveChangesAsync();
+		}
+
+		public async Task DeleteAsync(int id)
+		{
+			var hoursWorked = await _appDbContext.Hours_Worked.FindAsync(id);
+			if (hoursWorked != null)
+			{
+				_appDbContext.Hours_Worked.Remove(hoursWorked);
+				await _appDbContext.SaveChangesAsync();
+			}
+		}
 	}
 }
+

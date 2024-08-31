@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MR_Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240827173740_M&R")]
-    partial class MR
+    [Migration("20240831123512_INITIAL")]
+    partial class INITIAL
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,12 +36,6 @@ namespace MR_Backend.Migrations
                     b.HasKey("AdminId");
 
                     b.ToTable("Admin");
-
-                    b.HasData(
-                        new
-                        {
-                            AdminId = 1
-                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.General_User", b =>
@@ -142,11 +136,6 @@ namespace MR_Backend.Migrations
                         {
                             RoleId = 1,
                             Description = "Admin"
-                        },
-                        new
-                        {
-                            RoleId = 2,
-                            Description = "User"
                         });
                 });
 
@@ -204,14 +193,14 @@ namespace MR_Backend.Migrations
                         new
                         {
                             UserId = 1,
-                            Birthday = new DateTime(1985, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Birthday = new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@example.com",
-                            Name = "John",
-                            Password = "password123",
-                            PhoneNumber = "123-456-7890",
-                            RefreshTokenExpiryTime = new DateTime(2024, 8, 27, 19, 37, 40, 231, DateTimeKind.Local).AddTicks(568),
-                            ResetPasswordTokenExpiry = new DateTime(2024, 8, 27, 19, 37, 40, 231, DateTimeKind.Local).AddTicks(590),
-                            Surname = "Doe"
+                            Name = "Admin",
+                            Password = "CHRan9LfzqorWD34re3i/dDA8oxcgcFM1zvcy8GAdlP4D3Zl",
+                            PhoneNumber = "1234567890",
+                            RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ResetPasswordTokenExpiry = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Surname = "User"
                         });
                 });
 

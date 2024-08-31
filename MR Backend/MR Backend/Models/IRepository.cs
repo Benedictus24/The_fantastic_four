@@ -13,5 +13,11 @@
 		Task<User> ViewProfileAsync(int UserId);
 		Task<User[]> GetUsersAsync();
 
+		//------------------------------------------Tracking the schedule------------------------------------------------------------
+		Task<IEnumerable<Hours_Worked>> GetByUserIdAsync(int userId);
+		Task UpdateAsync(Hours_Worked hoursWorked);
+		Task DeleteAsync(int id);
+
+
 	}
 }

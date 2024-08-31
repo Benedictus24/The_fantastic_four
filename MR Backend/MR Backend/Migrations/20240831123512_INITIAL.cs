@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace MR_Backend.Migrations
 {
     /// <inheritdoc />
-    public partial class MR : Migration
+    public partial class INITIAL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -152,23 +150,14 @@ namespace MR_Backend.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Admin",
-                column: "AdminId",
-                value: 1);
-
-            migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "RoleId", "Description" },
-                values: new object[,]
-                {
-                    { 1, "Admin" },
-                    { 2, "User" }
-                });
+                values: new object[] { 1, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "UserId", "Birthday", "Email", "Name", "Password", "PhoneNumber", "RefreshToken", "RefreshTokenExpiryTime", "ResetPasswordToken", "ResetPasswordTokenExpiry", "Surname", "Token" },
-                values: new object[] { 1, new DateTime(1985, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@example.com", "John", "password123", "123-456-7890", null, new DateTime(2024, 8, 27, 19, 37, 40, 231, DateTimeKind.Local).AddTicks(568), null, new DateTime(2024, 8, 27, 19, 37, 40, 231, DateTimeKind.Local).AddTicks(590), "Doe", null });
+                values: new object[] { 1, new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@example.com", "Admin", "CHRan9LfzqorWD34re3i/dDA8oxcgcFM1zvcy8GAdlP4D3Zl", "1234567890", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "User", null });
 
             migrationBuilder.InsertData(
                 table: "User_Role",

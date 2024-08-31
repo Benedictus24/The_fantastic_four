@@ -33,7 +33,7 @@
   },
   {
     "ContainingType": "MR_Backend.Controllers.AuthController",
-    "Method": "AddUser",
+    "Method": "Register",
     "RelativePath": "api/Auth/Register",
     "HttpMethod": "POST",
     "IsController": true,
@@ -247,6 +247,7 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "GetWeatherForecast"
   }
 ]

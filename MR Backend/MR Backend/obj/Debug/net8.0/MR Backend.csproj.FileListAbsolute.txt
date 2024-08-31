@@ -293,3 +293,10 @@ C:\Users\hp\OneDrive\Documents\GitHub\The_fantastic_four\MR Backend\MR Backend\o
 C:\Users\hp\OneDrive\Documents\GitHub\The_fantastic_four\MR Backend\MR Backend\obj\Debug\net8.0\MR Backend.genruntimeconfig.cache
 C:\Users\hp\OneDrive\Documents\GitHub\The_fantastic_four\MR Backend\MR Backend\obj\Debug\net8.0\ref\MR Backend.dll
 C:\Users\hp\OneDrive\Documents\GitHub\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\MR Backend.staticwebassets.runtime.json
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\MailKit.dll
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Kuziwa Mutowo\Documents\Projects\Monkey_AND_River\The_fantastic_four\MR Backend\MR Backend\bin\Debug\net8.0\MimeKit.dll
