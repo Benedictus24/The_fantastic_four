@@ -76,6 +76,19 @@ namespace MR_Backend.Models
 				.Include(h => h.General_User)
 				.ToListAsync();
 		}
+		public async Task<Hours_Worked> CreateAsync(Hours_Worked newSession)
+		{
+			_appDbContext.Hours_Worked.Add(newSession);
+			await _appDbContext.SaveChangesAsync();
+			return newSession;
+		}
+
+		public async Task<Hours_Worked> GetByIdAsync(int workId)
+		{
+			return await _appDbContext.Hours_Worked
+				.Include(h => h.General_User)
+				.FirstOrDefaultAsync(h => h.WorkId == workId);
+		}
 
 		public async Task UpdateAsync(Hours_Worked hoursWorked)
 		{
