@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button Styles */
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-start {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-start:disabled {
+    background-color: #c3e6cb;
+    cursor: not-allowed;
+  }
+  
+  .btn-start:not(:disabled):hover {
+    background-color: #218838;
+  }
+  
+  .btn-end {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-end:disabled {
+    background-color: #f5c6cb;
+    cursor: not-allowed;
+  }
+  
+  .btn-end:not(:disabled):hover {
+    background-color: #c82333;
+  }
+  
+  /* Table Styles */
+  .shift-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .shift-table thead {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .shift-table th,
+  .shift-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .shift-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* No Shifts Message */
+  .no-shifts {
+    color: #6c757d;
+    text-align: center;
+  }
+  

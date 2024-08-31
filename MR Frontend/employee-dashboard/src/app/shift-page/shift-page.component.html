@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="button-group">
+      <button (click)="startShift()" [disabled]="currentShift" class="btn btn-start">Start Shift</button>
+      <button (click)="endShift()" [disabled]="!currentShift" class="btn btn-end">End Shift</button>
+    </div>
+    
+    <table *ngIf="shifts.length > 0" class="shift-table">
+      <thead>
+        <tr>
+          <th>Start Time</th>
+          <th>End Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shift of shifts">
+          <!-- <td>{{ shift.start | date:'short' }}</td>
+          <td>{{ shift.end ? (shift.end | date:'short') : 'Ongoing' }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+    
+    <p *ngIf="shifts.length === 0" class="no-shifts">No shifts to show</p>
+  </div>
+  
