@@ -17,7 +17,7 @@
 		Task<IEnumerable<Hours_Worked>> GetByUserIdAsync(int userId);
 		Task UpdateAsync(Hours_Worked hoursWorked);
 		Task DeleteAsync(int id);
-
-
+		Task<Hours_Worked> CreateAsync(Hours_Worked newSession);
+		Task<Hours_Worked> GetByIdAsync(int workId);
 	}
 }

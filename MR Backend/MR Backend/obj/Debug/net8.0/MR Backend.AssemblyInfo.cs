@@ -11,11 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MR Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+caf2ec6df5d16365054a764133740042a08f82e9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62d4d7e2fe9829d3c79dd6e32e484d68ffccfcf2")]
 [assembly: System.Reflection.AssemblyProductAttribute("MR Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MR Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
