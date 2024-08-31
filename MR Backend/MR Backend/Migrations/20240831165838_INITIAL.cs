@@ -111,8 +111,7 @@ namespace MR_Backend.Migrations
                 {
                     WorkId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GeneralUsrId = table.Column<int>(type: "int", nullable: false),
-                    General_UserGeneralUserId = table.Column<int>(type: "int", nullable: false),
+                    GeneralUserId = table.Column<int>(type: "int", nullable: false),
                     Time_In = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Time_Out = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -120,8 +119,8 @@ namespace MR_Backend.Migrations
                 {
                     table.PrimaryKey("PK_Hours_Worked", x => x.WorkId);
                     table.ForeignKey(
-                        name: "FK_Hours_Worked_General_User_General_UserGeneralUserId",
-                        column: x => x.General_UserGeneralUserId,
+                        name: "FK_Hours_Worked_General_User_GeneralUserId",
+                        column: x => x.GeneralUserId,
                         principalTable: "General_User",
                         principalColumn: "GeneralUserId",
                         onDelete: ReferentialAction.Cascade);
@@ -157,7 +156,7 @@ namespace MR_Backend.Migrations
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "UserId", "Birthday", "Email", "Name", "Password", "PhoneNumber", "RefreshToken", "RefreshTokenExpiryTime", "ResetPasswordToken", "ResetPasswordTokenExpiry", "Surname", "Token" },
-                values: new object[] { 1, new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@example.com", "Admin", "CHRan9LfzqorWD34re3i/dDA8oxcgcFM1zvcy8GAdlP4D3Zl", "1234567890", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "User", null });
+                values: new object[] { 1, new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@example.com", "Admin", "gZrfOsjLAwcqRzGqalRO28BkvKk1MX4KDvIg2hRqfJG9c/p7", "1234567890", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "User", null });
 
             migrationBuilder.InsertData(
                 table: "User_Role",
@@ -170,9 +169,9 @@ namespace MR_Backend.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Hours_Worked_General_UserGeneralUserId",
+                name: "IX_Hours_Worked_GeneralUserId",
                 table: "Hours_Worked",
-                column: "General_UserGeneralUserId");
+                column: "GeneralUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Meeting_GeneralUserId",

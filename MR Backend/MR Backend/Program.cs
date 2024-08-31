@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MR_Backend.EmailService;
 using MR_Backend.Models;
+using MR_Backend.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -77,6 +78,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<ITimeTrackingService, TimeTrackingService>();  
 builder.Services.Configure<DataProtectionTokenProviderOptions>(options => options.TokenLifespan = TimeSpan.FromHours(3));
 
 builder.Services.AddControllers();

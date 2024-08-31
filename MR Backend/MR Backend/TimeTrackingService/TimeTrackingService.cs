@@ -18,17 +18,19 @@ namespace MR_Backend.Services
 		{
 			_repository = repository;
 		}
-
 		public async Task<Hours_Worked> StartTracking(int userId)
 		{
+			int adjustedUserId = userId > 1 ? userId - 1 : userId;
+
 			var newSession = new Hours_Worked
 			{
-				GeneralUserId = userId,
+				GeneralUserId = adjustedUserId,
 				Time_In = DateTime.UtcNow
 			};
 
 			return await _repository.CreateAsync(newSession);
 		}
+
 
 		public async Task<Hours_Worked> StopTracking(int workId)
 		{

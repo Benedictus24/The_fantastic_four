@@ -65,10 +65,7 @@ namespace MR_Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WorkId"));
 
-                    b.Property<int>("GeneralUsrId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("General_UserGeneralUserId")
+                    b.Property<int>("GeneralUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Time_In")
@@ -79,7 +76,7 @@ namespace MR_Backend.Migrations
 
                     b.HasKey("WorkId");
 
-                    b.HasIndex("General_UserGeneralUserId");
+                    b.HasIndex("GeneralUserId");
 
                     b.ToTable("Hours_Worked");
                 });
@@ -193,7 +190,7 @@ namespace MR_Backend.Migrations
                             Birthday = new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@example.com",
                             Name = "Admin",
-                            Password = "CHRan9LfzqorWD34re3i/dDA8oxcgcFM1zvcy8GAdlP4D3Zl",
+                            Password = "gZrfOsjLAwcqRzGqalRO28BkvKk1MX4KDvIg2hRqfJG9c/p7",
                             PhoneNumber = "1234567890",
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ResetPasswordTokenExpiry = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -247,7 +244,7 @@ namespace MR_Backend.Migrations
                 {
                     b.HasOne("MR_Backend.Models.General_User", "General_User")
                         .WithMany()
-                        .HasForeignKey("General_UserGeneralUserId")
+                        .HasForeignKey("GeneralUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
