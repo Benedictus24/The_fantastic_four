@@ -1,0 +1,103 @@
+<div
+  class="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-white login-container p-4"
+>
+  <!-- Background SVG div -->
+  <div
+    class="absolute inset-0 w-full h-full bg-no-repeat bg-cover z-0"
+    style="background-image: url('../../../assets/images/bg2.svg')"
+  ></div>
+
+  <!-- Content of the page -->
+  <div class="w-full lg:w-1/2 mb-8 lg:mb-0 z-10">
+    <img
+      id="loginSvg"
+      src="../../../assets/images/register.svg"
+      alt="logo"
+      class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
+    />
+  </div>
+
+  <div class="bg-white shadow-lg p-8 w-full max-w-md z-10 rounded-lg">
+    <h2 class="text-2xl font-extrabold mb-6 text-center text-blue-950">
+      Register Here!
+    </h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="mb-4">
+        <label class="block text-md text-blue-950">First Name</label>
+        <input
+          formControlName="firstName"
+          type="text"
+          required
+          class="w-full px-3 py-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yel focus:border-transparent"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-md text-blue-950">Last Name</label>
+        <input
+          formControlName="lastName"
+          type="text"
+          required
+          class="w-full px-3 py-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yel focus:border-transparent"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-md text-blue-950">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          required
+          class="w-full px-3 py-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yel focus:border-transparent"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-md text-blue-950">Password</label>
+        <input
+          formControlName="password"
+          type="password"
+          required
+          class="w-full px-3 py-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yel focus:border-transparent"
+        />
+      </div>
+      <div class="mb-6">
+        <label class="block text-md text-blue-950">Confirm Password</label>
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          required
+          class="w-full px-3 py-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yel focus:border-transparent"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-yel text-white py-2 text-md rounded-lg hover:bg-yellow-700 transition-colors duration-300"
+      >
+        Register
+      </button>
+    </form>
+
+    <div class="relative my-4 flex items-center">
+      <div class="flex-grow border-t border-gray-300"></div>
+      <span class="flex-shrink mx-2 text-gray-500">OR</span>
+      <div class="flex-grow border-t border-gray-300"></div>
+    </div>
+
+    <button
+      type="button"
+      class="w-full flex items-center justify-center bg-white border border-gray-300 rounded-lg py-2 text-md text-gray-700 hover:bg-gray-100 transition-colors duration-300"
+    >
+      <img
+        src="../../../assets/images/google.svg"
+        alt="Google Icon"
+        class="w-6 h-6 mr-2"
+      />
+      Register with <span class="font-medium px-2">Google</span>
+    </button>
+
+    <div class="mt-4 text-center">
+      <p class="text-blue-950">
+        Already have an account? 
+        <a routerLink="/login" class="text-lavender hover:underline">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
