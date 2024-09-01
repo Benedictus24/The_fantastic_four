@@ -7,8 +7,9 @@ namespace MR_Backend.Models
 	{
 		[Key]
 		public int WorkId { get; set; }
-		[ForeignKey("GeneralUser")]
-		public int GeneralUsrId { get; set; }
+
+		[ForeignKey("General_User")]
+		public int GeneralUserId { get; set; }
 		public virtual General_User General_User { get; set; }
 		public DateTime Time_In { get; set; }
 		public DateTime Time_Out { get; set; }

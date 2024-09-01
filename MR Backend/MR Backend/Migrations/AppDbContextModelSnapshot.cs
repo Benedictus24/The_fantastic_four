@@ -65,10 +65,7 @@ namespace MR_Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WorkId"));
 
-                    b.Property<int>("GeneralUsrId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("General_UserGeneralUserId")
+                    b.Property<int>("GeneralUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Time_In")
@@ -79,7 +76,7 @@ namespace MR_Backend.Migrations
 
                     b.HasKey("WorkId");
 
-                    b.HasIndex("General_UserGeneralUserId");
+                    b.HasIndex("GeneralUserId");
 
                     b.ToTable("Hours_Worked");
                 });
@@ -127,6 +124,13 @@ namespace MR_Backend.Migrations
                     b.HasKey("RoleId");
 
                     b.ToTable("Role");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            Description = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.User", b =>
@@ -156,13 +160,42 @@ namespace MR_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ResetPasswordToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ResetPasswordTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Surname")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Birthday = new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@example.com",
+                            Name = "Admin",
+                            Password = "gZrfOsjLAwcqRzGqalRO28BkvKk1MX4KDvIg2hRqfJG9c/p7",
+                            PhoneNumber = "1234567890",
+                            RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ResetPasswordTokenExpiry = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Surname = "User"
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.User_Role", b =>
@@ -186,6 +219,14 @@ namespace MR_Backend.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("User_Role");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RoleId = 1,
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("MR_Backend.Models.General_User", b =>
@@ -203,7 +244,7 @@ namespace MR_Backend.Migrations
                 {
                     b.HasOne("MR_Backend.Models.General_User", "General_User")
                         .WithMany()
-                        .HasForeignKey("General_UserGeneralUserId")
+                        .HasForeignKey("GeneralUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
